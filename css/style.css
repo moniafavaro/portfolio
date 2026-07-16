@@ -294,3 +294,72 @@ section { padding: 5rem 0; }
   gap: 1rem;
   flex-wrap: wrap;
 }
+
+/* ── About: Bio ── */
+.bio-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 3rem;
+  align-items: start;
+}
+.bio-text p + p { margin-top: 1rem; }
+.bio-text p { color: var(--silver-dim); font-size: 1.05rem; }
+
+.bio-photo-wrap {
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 2px solid rgba(30, 144, 255, 0.2);
+  box-shadow: 0 0 32px rgba(30, 144, 255, 0.08);
+}
+.bio-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; }
+
+/* ── About: Skills ── */
+.about-skills { background: var(--blue-secondary); }
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+.skill-cat-title {
+  font-family: var(--font-accent);
+  font-size: 0.85rem;
+  color: var(--blue-primary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.skill-badges { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.badge {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  background: rgba(30, 144, 255, 0.1);
+  color: var(--blue-primary);
+  border: 1px solid rgba(30, 144, 255, 0.25);
+  transition: all var(--transition);
+}
+.badge:hover {
+  background: rgba(30, 144, 255, 0.2);
+  border-color: var(--blue-primary);
+}
+
+/* ── About: Resume ── */
+.resume-desc {
+  color: var(--silver-dim);
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+/* ── Responsive: About ── */
+@media (max-width: 767px) {
+  .bio-grid {
+    grid-template-columns: 1fr;
+  }
+  .bio-photo-wrap {
+    max-width: 240px;
+    margin: 0 auto;
+  }
+  .skills-grid { grid-template-columns: 1fr; gap: 2rem; }
+}
